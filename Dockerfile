@@ -32,8 +32,7 @@ RUN apk add --no-cache \
     opcache \
     mbstring \
     xml \
-    curl \
-  && apk del icu-dev libzip-dev oniguruma-dev libxml2-dev curl-dev freetype-dev libjpeg-turbo-dev libpng-dev sqlite-dev
+    curl
 
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
