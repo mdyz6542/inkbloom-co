@@ -17,8 +17,8 @@ class DatabaseSeeder extends Seeder
         // Admin user
         User::create([
             'name'     => 'Admin',
-            'email'    => 'admin@inkbloom.com',
-            'password' => bcrypt('password'),
+            'email'    => env('DEMO_ADMIN_EMAIL', 'admin@inkbloom.com'),
+            'password' => bcrypt(env('DEMO_ADMIN_PASSWORD', \Illuminate\Support\Str::random(20))),
         ]);
 
         // Categories
