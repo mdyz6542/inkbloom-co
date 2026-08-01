@@ -37,7 +37,8 @@
     @endif
 
     {{-- Organization schema (every page) --}}
-    <script type="application/ld+json">{!! json_encode([
+    @php
+    $organizationSchema = [
         '@context'  => 'https://schema.org',
         '@type'     => 'Organization',
         'name'      => 'Inkbloom Co.',
@@ -45,7 +46,9 @@
         'logo'      => url('/images/logo.png'),
         'sameAs'    => ['https://instagram.com/inkbloomco'],
         'contactPoint' => [['@type' => 'ContactPoint', 'contactType' => 'customer service', 'availableLanguage' => 'English']],
-    ], JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE) !!}</script>
+    ];
+    @endphp
+    <script type="application/ld+json">{!! json_encode($organizationSchema, JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE) !!}</script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
