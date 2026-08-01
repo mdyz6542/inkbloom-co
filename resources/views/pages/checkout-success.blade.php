@@ -43,7 +43,7 @@
         @foreach($order->items as $item)
         <div class="flex items-center justify-between text-sm">
           <div class="flex items-center gap-3">
-            <div class="w-10 h-10 rounded-xl bg-blush flex items-center justify-center text-lg">🖋️</div>
+            <x-product-image :product="$item->product" :alt="$item->name" size="text-lg" class="w-10 h-10 rounded-xl bg-blush" />
             <div>
               <div class="font-semibold">{{ $item->name }}</div>
               <div class="text-fog text-xs">Qty: {{ $item->quantity }}</div>

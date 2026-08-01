@@ -133,7 +133,7 @@
         <a href="{{ route('product.show', $product->slug) }}">
           <div class="aspect-square relative" style="background:{{ $bgColors[$i % 4] }};">
             <span class="absolute top-3 left-3 chip" style="background:#FF4D6D;color:white;border-color:#FF4D6D;">NEW</span>
-            <div class="absolute inset-0 flex items-center justify-center text-6xl">🖋️</div>
+            <x-product-image :product="$product" size="text-6xl" class="absolute inset-0 w-full h-full" />
           </div>
           <div class="p-4">
             <p class="text-xs text-fog">{{ $product->category->name ?? '' }}</p>
@@ -169,7 +169,7 @@
       @foreach($cutePicks as $i => $product)
       <a href="{{ route('product.show', $product->slug) }}" class="snap-start shrink-0 w-64 bg-white rounded-3xl overflow-hidden product-card">
         <div class="aspect-square relative" style="background:{{ $cuteColors[$i % 6] }};">
-          <div class="absolute inset-0 flex items-center justify-center text-7xl">💗</div>
+          <x-product-image :product="$product" fallback="💗" size="text-7xl" class="absolute inset-0 w-full h-full" />
           <span class="absolute top-3 left-3 chip">{{ $product->category->name ?? 'Cute' }}</span>
         </div>
         <div class="p-4 flex items-center justify-between">
@@ -253,7 +253,7 @@
         <a href="{{ route('product.show', $product->slug) }}">
           <div class="aspect-square relative" style="background:{{ $bgColors[$i % 4] }};">
             <span class="absolute top-3 left-3 chip" style="background:#FFF2C4;">🏆 #{{ $i + 1 }}</span>
-            <div class="absolute inset-0 flex items-center justify-center text-6xl">🖊️</div>
+            <x-product-image :product="$product" fallback="🖊️" size="text-6xl" class="absolute inset-0 w-full h-full" />
           </div>
           <div class="p-4">
             <p class="text-xs text-fog">{{ $product->category->name ?? '' }}</p>

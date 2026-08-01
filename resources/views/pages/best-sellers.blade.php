@@ -41,7 +41,7 @@
         <a href="{{ route('product.show', $product->slug) }}">
           <div class="aspect-square relative" style="background:{{ $bgColors[$i % 6] }};">
             <span class="absolute top-3 left-3 chip" style="background:#FFF2C4;">🏆 Best</span>
-            <div class="absolute inset-0 flex items-center justify-center text-6xl">🖋️</div>
+            <x-product-image :product="$product" size="text-6xl" class="absolute inset-0 w-full h-full" />
           </div>
           <div class="p-4">
             <p class="text-xs text-fog">{{ $product->category->name ?? '' }}</p>

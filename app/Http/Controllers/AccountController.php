@@ -9,7 +9,7 @@ class AccountController extends Controller
     public function index()
     {
         $orders = Order::where('user_id', auth()->id())
-            ->with('items')
+            ->with('items.product.images')
             ->latest()
             ->take(5)
             ->get();
@@ -20,7 +20,7 @@ class AccountController extends Controller
     public function orders()
     {
         $orders = Order::where('user_id', auth()->id())
-            ->with('items', 'address')
+            ->with('items.product.images', 'address')
             ->latest()
             ->paginate(10);
 
@@ -31,7 +31,7 @@ class AccountController extends Controller
     {
         $order = Order::where('user_id', auth()->id())
             ->where('order_number', $orderNumber)
-            ->with('items', 'address')
+            ->with('items.product.images', 'address')
             ->firstOrFail();
 
         return view('account.order-detail', compact('order'));

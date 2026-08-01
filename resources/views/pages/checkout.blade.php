@@ -139,7 +139,7 @@
             <div class="space-y-3">
               @foreach($items as $item)
               <div class="flex items-center gap-3 text-sm">
-                <div class="w-10 h-10 rounded-xl bg-blush flex items-center justify-center text-lg shrink-0">🖋️</div>
+                <x-product-image :image="$item['image'] ?? null" :alt="$item['name']" size="text-lg" class="w-10 h-10 rounded-xl bg-blush shrink-0" />
                 <div class="flex-1 min-w-0">
                   <div class="font-semibold truncate">{{ $item['name'] }}</div>
                   <div class="text-fog text-xs">Qty: {{ $item['quantity'] }}</div>

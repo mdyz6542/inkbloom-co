@@ -11,7 +11,7 @@ class CategoryController extends Controller
     {
         $products = Product::where('category_id', $category->id)
                            ->where('is_active', true)
-                           ->with('category')
+                           ->with('category', 'images')
                            ->paginate(12);
 
         return view('pages.category', compact('category', 'products'));

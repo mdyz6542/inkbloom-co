@@ -26,6 +26,7 @@ class CartService
                 'id'       => $product->id,
                 'name'     => $product->name,
                 'slug'     => $product->slug,
+                'image'    => $product->main_image,
                 'price'    => (float) ($product->sale_price ?? $product->price),
                 'quantity' => $qty,
             ];

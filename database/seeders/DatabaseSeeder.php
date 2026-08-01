@@ -44,39 +44,48 @@ class DatabaseSeeder extends Seeder
         $cute      = Category::where('slug', 'cute-collection')->first();
         $gifts     = Category::where('slug', 'gifts-bundles')->first();
 
-        // Products
+        // Products. Each 'image' points at a file in public/images/products/ and is
+        // stored as a product_images row so the storefront renders a real photo
+        // instead of the emoji fallback.
         $products = [
             // Writing
-            ['name'=>'Pastel Gel Pen Set',         'slug'=>'pastel-gel-pen-set',         'category_id'=>$writing->id, 'price'=>350,  'sale_price'=>299,  'stock'=>50,  'is_new'=>true,  'is_featured'=>true,  'is_bestseller'=>false, 'tagline'=>'Smooth as a quiet morning.'],
-            ['name'=>'Bloom Character Pen',         'slug'=>'bloom-character-pen',         'category_id'=>$writing->id, 'price'=>199,  'sale_price'=>null, 'stock'=>80,  'is_new'=>true,  'is_featured'=>false, 'is_bestseller'=>true,  'tagline'=>'Too cute to put down.'],
-            ['name'=>'Mechanical Pencil Set',       'slug'=>'mechanical-pencil-set',       'category_id'=>$writing->id, 'price'=>450,  'sale_price'=>399,  'stock'=>30,  'is_new'=>false, 'is_featured'=>false, 'is_bestseller'=>true,  'tagline'=>'Precision, but make it pretty.'],
+            ['name'=>'Pastel Gel Pen Set',           'slug'=>'pastel-gel-pen-set',           'category_id'=>$writing->id, 'price'=>350,  'sale_price'=>299,  'stock'=>50,  'is_new'=>true,  'is_featured'=>true,  'is_bestseller'=>true,  'tagline'=>'Smooth as a quiet morning.',            'image'=>'bloom-gel-pen-set-pastel'],
+            ['name'=>'Bloom Character Pen',          'slug'=>'bloom-character-pen',          'category_id'=>$writing->id, 'price'=>199,  'sale_price'=>null, 'stock'=>80,  'is_new'=>true,  'is_featured'=>false, 'is_bestseller'=>true,  'tagline'=>'Too cute to put down.',                 'image'=>'chick-top-ballpoint-pen'],
+            ['name'=>'HB Pencil Set (12 Pack)',      'slug'=>'hb-pencil-set-12',             'category_id'=>$writing->id, 'price'=>450,  'sale_price'=>399,  'stock'=>30,  'is_new'=>false, 'is_featured'=>false, 'is_bestseller'=>true,  'tagline'=>'Precision, but make it pretty.',        'image'=>'bloom-hb-pencil-set-12'],
+            ['name'=>'Sakura Fine Liner Set (10)',   'slug'=>'sakura-fine-liner-set-10',     'category_id'=>$writing->id, 'price'=>890,  'sale_price'=>790,  'stock'=>28,  'is_new'=>true,  'is_featured'=>true,  'is_bestseller'=>false, 'tagline'=>'For lines you want to keep.',           'image'=>'sakura-fine-liner-set-10'],
+            ['name'=>'Pastel Highlighter Set (6)',   'slug'=>'pastel-highlighter-set-6',     'category_id'=>$writing->id, 'price'=>420,  'sale_price'=>null, 'stock'=>65,  'is_new'=>false, 'is_featured'=>false, 'is_bestseller'=>true,  'tagline'=>'Soft glow, no bleed-through.',          'image'=>'pastel-highlighter-set-6'],
             // Paper
-            ['name'=>'Floral Hardcover Journal',    'slug'=>'floral-hardcover-journal',    'category_id'=>$paper->id,   'price'=>650,  'sale_price'=>550,  'stock'=>25,  'is_new'=>true,  'is_featured'=>true,  'is_bestseller'=>true,  'tagline'=>'For thoughts too good to lose.'],
-            ['name'=>'Pastel Sticky Notes Bundle',  'slug'=>'pastel-sticky-notes-bundle',  'category_id'=>$paper->id,   'price'=>299,  'sale_price'=>null, 'stock'=>100, 'is_new'=>false, 'is_featured'=>false, 'is_bestseller'=>true,  'tagline'=>'Leave little notes everywhere.'],
-            ['name'=>'Weekly Planner Diary',        'slug'=>'weekly-planner-diary',        'category_id'=>$paper->id,   'price'=>550,  'sale_price'=>480,  'stock'=>20,  'is_new'=>true,  'is_featured'=>false, 'is_bestseller'=>false, 'tagline'=>'Plan it. Live it. Love it.'],
+            ['name'=>'Floral Softcover Journal A5',  'slug'=>'floral-softcover-journal-a5',  'category_id'=>$paper->id,   'price'=>650,  'sale_price'=>550,  'stock'=>25,  'is_new'=>true,  'is_featured'=>true,  'is_bestseller'=>true,  'tagline'=>'For thoughts too good to lose.',        'image'=>'bloom-softcover-journal-a5'],
+            ['name'=>'Pastel Sticky Note Set (4)',   'slug'=>'pastel-sticky-note-set-4',     'category_id'=>$paper->id,   'price'=>299,  'sale_price'=>null, 'stock'=>100, 'is_new'=>false, 'is_featured'=>false, 'is_bestseller'=>true,  'tagline'=>'Leave little notes everywhere.',        'image'=>'pastel-sticky-note-set-4'],
+            ['name'=>'Bloom Daily Planner 2026',     'slug'=>'bloom-daily-planner-2026',     'category_id'=>$paper->id,   'price'=>550,  'sale_price'=>480,  'stock'=>20,  'is_new'=>true,  'is_featured'=>true,  'is_bestseller'=>false, 'tagline'=>'Plan it. Live it. Love it.',            'image'=>'bloom-daily-planner-2026'],
+            ['name'=>'Kawaii Grid Notebook B5',      'slug'=>'kawaii-grid-notebook-b5',      'category_id'=>$paper->id,   'price'=>480,  'sale_price'=>420,  'stock'=>52,  'is_new'=>true,  'is_featured'=>false, 'is_bestseller'=>false, 'tagline'=>'Grid paper, but make it soft.',         'image'=>'kawaii-grid-notebook-b5'],
             // Art & Craft
-            ['name'=>'Watercolor Paint Set 24',     'slug'=>'watercolor-paint-set-24',     'category_id'=>$art->id,     'price'=>850,  'sale_price'=>750,  'stock'=>15,  'is_new'=>false, 'is_featured'=>true,  'is_bestseller'=>false, 'tagline'=>'Paint your own world.'],
-            ['name'=>'Sketchbook A5',               'slug'=>'sketchbook-a5',               'category_id'=>$art->id,     'price'=>399,  'sale_price'=>null, 'stock'=>40,  'is_new'=>false, 'is_featured'=>false, 'is_bestseller'=>true,  'tagline'=>'Blank pages, endless ideas.'],
+            ['name'=>'Watercolour Set (24)',         'slug'=>'watercolour-set-24',           'category_id'=>$art->id,     'price'=>850,  'sale_price'=>750,  'stock'=>15,  'is_new'=>false, 'is_featured'=>true,  'is_bestseller'=>true,  'tagline'=>'Paint your own world.',                 'image'=>'watercolour-set-24'],
+            ['name'=>'A4 Mixed Media Sketchbook',    'slug'=>'a4-mixed-media-sketchbook',    'category_id'=>$art->id,     'price'=>399,  'sale_price'=>null, 'stock'=>40,  'is_new'=>false, 'is_featured'=>false, 'is_bestseller'=>true,  'tagline'=>'Blank pages, endless ideas.',           'image'=>'a4-mixed-media-sketchbook'],
             // School Essentials
-            ['name'=>'Kawaii Pencil Case',          'slug'=>'kawaii-pencil-case',          'category_id'=>$school->id,  'price'=>499,  'sale_price'=>429,  'stock'=>35,  'is_new'=>true,  'is_featured'=>true,  'is_bestseller'=>true,  'tagline'=>'Your supplies deserve a cute home.'],
-            ['name'=>'Geometry Box Deluxe',         'slug'=>'geometry-box-deluxe',         'category_id'=>$school->id,  'price'=>350,  'sale_price'=>null, 'stock'=>60,  'is_new'=>false, 'is_featured'=>false, 'is_bestseller'=>false, 'tagline'=>'All the tools, none of the stress.'],
+            ['name'=>'Bloom Aesthetic Pencil Pouch', 'slug'=>'bloom-aesthetic-pencil-pouch', 'category_id'=>$school->id,  'price'=>499,  'sale_price'=>429,  'stock'=>35,  'is_new'=>true,  'is_featured'=>true,  'is_bestseller'=>true,  'tagline'=>'Your supplies deserve a cute home.',    'image'=>'bloom-aesthetic-pencil-pouch'],
+            ['name'=>'Geometry Box Premium',         'slug'=>'geometry-box-premium',         'category_id'=>$school->id,  'price'=>350,  'sale_price'=>null, 'stock'=>60,  'is_new'=>false, 'is_featured'=>false, 'is_bestseller'=>false, 'tagline'=>'All the tools, none of the stress.',    'image'=>'bloom-geometry-box-premium'],
             // Office & Desk
-            ['name'=>'Pastel Desk Organizer',       'slug'=>'pastel-desk-organizer',       'category_id'=>$office->id,  'price'=>750,  'sale_price'=>650,  'stock'=>18,  'is_new'=>true,  'is_featured'=>true,  'is_bestseller'=>false, 'tagline'=>'Tidy desk, clear mind.'],
-            ['name'=>'Aesthetic File Folder Set',   'slug'=>'aesthetic-file-folder-set',   'category_id'=>$office->id,  'price'=>399,  'sale_price'=>null, 'stock'=>45,  'is_new'=>false, 'is_featured'=>false, 'is_bestseller'=>false, 'tagline'=>'Filing never looked this good.'],
+            ['name'=>'Pastel Water Bottle 500ml',    'slug'=>'pastel-water-bottle-500ml',    'category_id'=>$office->id,  'price'=>1250, 'sale_price'=>1050, 'stock'=>22,  'is_new'=>true,  'is_featured'=>true,  'is_bestseller'=>false, 'tagline'=>'Desk-friendly, keeps it cold all day.', 'image'=>'pastel-insulated-water-bottle-500ml'],
             // Cute Collection
-            ['name'=>'Kawaii Sticker Mega Pack',    'slug'=>'kawaii-sticker-mega-pack',    'category_id'=>$cute->id,    'price'=>299,  'sale_price'=>249,  'stock'=>120, 'is_new'=>true,  'is_featured'=>true,  'is_bestseller'=>true,  'tagline'=>'Stick them everywhere.'],
-            ['name'=>'Pastel Washi Tape Set',       'slug'=>'pastel-washi-tape-set',       'category_id'=>$cute->id,    'price'=>450,  'sale_price'=>399,  'stock'=>75,  'is_new'=>true,  'is_featured'=>true,  'is_bestseller'=>true,  'tagline'=>'Wrap everything in pretty.'],
-            ['name'=>'Stitch Memo Pad',             'slug'=>'stitch-memo-pad',             'category_id'=>$cute->id,    'price'=>250,  'sale_price'=>null, 'stock'=>90,  'is_new'=>false, 'is_featured'=>false, 'is_bestseller'=>true,  'tagline'=>'Even your notes need a best friend.'],
-            ['name'=>'Bloom Aesthetic Set',         'slug'=>'bloom-aesthetic-set',         'category_id'=>$cute->id,    'price'=>899,  'sale_price'=>799,  'stock'=>30,  'is_new'=>true,  'is_featured'=>true,  'is_bestseller'=>false, 'tagline'=>'The whole vibe, in one box.'],
-            ['name'=>'Disney Character Eraser Set', 'slug'=>'disney-character-eraser-set', 'category_id'=>$cute->id,    'price'=>350,  'sale_price'=>299,  'stock'=>55,  'is_new'=>false, 'is_featured'=>false, 'is_bestseller'=>true,  'tagline'=>'Too cute to use. Use them anyway.'],
+            ['name'=>'Kawaii Sticker Sheet Set (10)','slug'=>'kawaii-sticker-sheet-set-10',  'category_id'=>$cute->id,    'price'=>299,  'sale_price'=>249,  'stock'=>120, 'is_new'=>true,  'is_featured'=>true,  'is_bestseller'=>true,  'tagline'=>'Stick them everywhere.',                'image'=>'kawaii-sticker-sheet-set-10'],
+            ['name'=>'Pastel Washi Tape Set (8)',    'slug'=>'pastel-washi-tape-set-8',      'category_id'=>$cute->id,    'price'=>450,  'sale_price'=>399,  'stock'=>75,  'is_new'=>true,  'is_featured'=>true,  'is_bestseller'=>true,  'tagline'=>'Wrap everything in pretty.',            'image'=>'pastel-washi-tape-set-8'],
+            ['name'=>'Disney Character Pen Set (6)', 'slug'=>'disney-character-pen-set-6',   'category_id'=>$cute->id,    'price'=>350,  'sale_price'=>299,  'stock'=>55,  'is_new'=>false, 'is_featured'=>false, 'is_bestseller'=>true,  'tagline'=>'Too cute to use. Use them anyway.',     'image'=>'disney-character-pen-set-6'],
             // Gifts & Bundles
-            ['name'=>'Back to School Bundle',       'slug'=>'back-to-school-bundle',       'category_id'=>$gifts->id,   'price'=>1499, 'sale_price'=>1299, 'stock'=>20,  'is_new'=>false, 'is_featured'=>true,  'is_bestseller'=>true,  'tagline'=>'Everything for a fresh start.'],
-            ['name'=>'Kawaii Birthday Box',         'slug'=>'kawaii-birthday-box',         'category_id'=>$gifts->id,   'price'=>1999, 'sale_price'=>1799, 'stock'=>10,  'is_new'=>true,  'is_featured'=>true,  'is_bestseller'=>false, 'tagline'=>'The gift that makes them squeal.'],
-            ['name'=>'Desk Refresh Gift Set',       'slug'=>'desk-refresh-gift-set',       'category_id'=>$gifts->id,   'price'=>1299, 'sale_price'=>null, 'stock'=>15,  'is_new'=>false, 'is_featured'=>false, 'is_bestseller'=>false, 'tagline'=>'A whole new desk energy.'],
+            ['name'=>'Bloom Desk Edit Gift Set',     'slug'=>'bloom-desk-edit-gift-set',     'category_id'=>$gifts->id,   'price'=>1999, 'sale_price'=>1799, 'stock'=>18,  'is_new'=>true,  'is_featured'=>true,  'is_bestseller'=>false, 'tagline'=>'The whole vibe, in one box.',           'image'=>'bloom-desk-edit-aesthetic-set'],
         ];
 
         foreach ($products as $product) {
-            Product::create(array_merge($product, ['is_active' => true]));
+            $imageName = $product['image'];
+            unset($product['image']);
+
+            $created = Product::create(array_merge($product, ['is_active' => true]));
+
+            $created->images()->create([
+                'path'       => 'images/products/'.$imageName.'.webp',
+                'alt_text'   => $created->name,
+                'sort_order' => 0,
+            ]);
         }
 
         // Blog Categories

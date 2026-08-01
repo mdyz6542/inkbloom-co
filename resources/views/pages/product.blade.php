@@ -59,12 +59,20 @@ $breadcrumbSchema = [
     <div>
       <div class="grid grid-cols-[80px_1fr] gap-4">
         <div class="space-y-3">
-          <button class="w-20 h-20 rounded-2xl bg-blush flex items-center justify-center text-3xl ring-2 ring-cherry">🖋️</button>
-          <button class="w-20 h-20 rounded-2xl bg-lilac flex items-center justify-center text-3xl hover:ring-2 hover:ring-cherry">💗</button>
-          <button class="w-20 h-20 rounded-2xl bg-matcha flex items-center justify-center text-3xl hover:ring-2 hover:ring-cherry">✨</button>
+          @forelse($product->images as $i => $productImage)
+            <button class="w-20 h-20 rounded-2xl overflow-hidden bg-blush {{ $i === 0 ? 'ring-2 ring-cherry' : 'hover:ring-2 hover:ring-cherry' }}">
+              <x-product-image :image="$productImage->path"
+                               :alt="$productImage->alt_text ?? $product->name"
+                               class="w-full h-full" />
+            </button>
+          @empty
+            <button class="w-20 h-20 rounded-2xl bg-blush flex items-center justify-center text-3xl ring-2 ring-cherry">🖋️</button>
+            <button class="w-20 h-20 rounded-2xl bg-lilac flex items-center justify-center text-3xl hover:ring-2 hover:ring-cherry">💗</button>
+            <button class="w-20 h-20 rounded-2xl bg-matcha flex items-center justify-center text-3xl hover:ring-2 hover:ring-cherry">✨</button>
+          @endforelse
         </div>
         <div class="relative aspect-square rounded-4xl overflow-hidden" style="background: linear-gradient(135deg,#FFD4DE,#E4D6FF);">
-          <div class="absolute inset-0 flex items-center justify-center text-9xl">🖋️</div>
+          <x-product-image :product="$product" size="text-9xl" class="absolute inset-0 w-full h-full" />
           @if($product->is_bestseller)
             <span class="absolute top-4 left-4 chip" style="background:#FFF2C4;">🏆 Best Seller</span>
           @elseif($product->is_new)
@@ -255,7 +263,7 @@ $breadcrumbSchema = [
       @foreach($related->take(4) as $i => $item)
       <article class="bg-white rounded-3xl overflow-hidden product-card">
         <a href="{{ route('product.show', $item->slug) }}">
-          <div class="aspect-square" style="background:{{ $bgColors[$i % 4] }};"><div class="w-full h-full flex items-center justify-center text-6xl">🖋️</div></div>
+          <div class="aspect-square" style="background:{{ $bgColors[$i % 4] }};"><x-product-image :product="$item" size="text-6xl" class="w-full h-full" /></div>
           <div class="p-4">
             <h3 class="font-display">{{ $item->name }}</h3>
             <div class="mt-1 flex items-center justify-between"><span class="font-semibold">Rs {{ number_format($item->sale_price ?? $item->price) }}</span><span class="star text-xs">★★★★★</span></div>

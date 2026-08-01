@@ -46,7 +46,7 @@
           <div class="mt-4 space-y-2">
             @foreach($order->items as $item)
             <div class="flex items-center gap-3 text-sm text-plum/70">
-              <div class="w-8 h-8 rounded-xl bg-blush flex items-center justify-center text-base shrink-0">🖋️</div>
+              <x-product-image :product="$item->product" :alt="$item->name" size="text-base" class="w-8 h-8 rounded-xl bg-blush shrink-0" />
               <span>{{ $item->name }}</span>
               <span class="text-fog">× {{ $item->quantity }}</span>
               <span class="ml-auto font-semibold">Rs {{ number_format($item->total) }}</span>

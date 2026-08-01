@@ -95,7 +95,7 @@
               @elseif($product->sale_price)
                 <span class="absolute top-3 left-3 chip" style="background:#FF4D6D;color:white;border-color:#FF4D6D;">SALE</span>
               @endif
-              <div class="absolute inset-0 flex items-center justify-center text-6xl">🖋️</div>
+              <x-product-image :product="$product" size="text-6xl" class="absolute inset-0 w-full h-full" />
             </div>
             <div class="p-4">
               <p class="text-xs text-fog">{{ $product->category->name ?? '' }}</p>

@@ -104,7 +104,7 @@ class CheckoutController extends Controller
 
     public function success(string $orderNumber)
     {
-        $order = Order::where('order_number', $orderNumber)->with('items', 'address')->firstOrFail();
+        $order = Order::where('order_number', $orderNumber)->with('items.product.images', 'address')->firstOrFail();
         return view('pages.checkout-success', compact('order'));
     }
 }

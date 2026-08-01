@@ -28,7 +28,7 @@
       <div class="space-y-4">
         @foreach($items as $item)
         <div class="bg-white rounded-3xl border border-cloud p-5 flex items-center gap-5">
-          <div class="w-20 h-20 rounded-2xl flex items-center justify-center text-4xl shrink-0" style="background:#FFD4DE;">🖋️</div>
+          <x-product-image :image="$item['image'] ?? null" :alt="$item['name']" size="text-4xl" class="w-20 h-20 rounded-2xl shrink-0" style="background:#FFD4DE;" />
           <div class="flex-1 min-w-0">
             <h3 class="font-display text-lg leading-tight">{{ $item['name'] }}</h3>
             <p class="text-fog text-sm mt-0.5">Rs {{ number_format($item['price']) }} each</p>

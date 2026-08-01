@@ -96,7 +96,7 @@
               @if($product->is_new)
                 <span class="absolute top-3 left-3 chip" style="background:#FF4D6D;color:white;border-color:#FF4D6D;">NEW</span>
               @endif
-              <div class="absolute inset-0 flex items-center justify-center text-7xl">🖋️</div>
+              <x-product-image :product="$product" size="text-7xl" class="absolute inset-0 w-full h-full" />
             </div>
             <div class="p-4">
               <h3 class="font-display">{{ $product->name }}</h3>
