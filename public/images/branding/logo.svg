@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 160" font-family="'Fredoka', 'Poppins', sans-serif">
+
+  <!-- Bloomie Mascot -->
+  <g transform="translate(85, 80)">
+    <!-- Stem -->
+    <rect x="-4" y="50" width="8" height="40" rx="4" fill="#D4E9D0"/>
+    <!-- Leaf -->
+    <ellipse cx="14" cy="75" rx="12" ry="6" fill="#D4E9D0" transform="rotate(30 14 75)"/>
+    <!-- Petals -->
+    <ellipse cx="0" cy="-40" rx="22" ry="30" fill="#FFD4DE"/>
+    <ellipse cx="-38" cy="-15" rx="22" ry="30" fill="#FFD4DE" transform="rotate(-60 -38 -15)"/>
+    <ellipse cx="38" cy="-15" rx="22" ry="30" fill="#FFD4DE" transform="rotate(60 38 -15)"/>
+    <ellipse cx="-28" cy="30" rx="22" ry="30" fill="#FFD4DE" transform="rotate(-130 -28 30)"/>
+    <ellipse cx="28" cy="30" rx="22" ry="30" fill="#FFD4DE" transform="rotate(130 28 30)"/>
+    <!-- Face -->
+    <circle cx="0" cy="0" r="32" fill="#FFF2C4"/>
+    <!-- Cheeks -->
+    <circle cx="-16" cy="6" r="5" fill="#FF4D6D" opacity="0.45"/>
+    <circle cx="16" cy="6" r="5" fill="#FF4D6D" opacity="0.45"/>
+    <!-- Eyes -->
+    <path d="M -12,-6 Q -8,-12 -4,-6" stroke="#3D2B4F" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <path d="M 4,-6 Q 8,-12 12,-6" stroke="#3D2B4F" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <!-- Smile -->
+    <path d="M -5,6 Q 0,10 5,6" stroke="#3D2B4F" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <!-- Pen -->
+    <g transform="translate(48, 20) rotate(30)">
+      <rect x="-2" y="-30" width="5" height="40" rx="2" fill="#3D2B4F"/>
+      <path d="M -3,10 L 4,10 L 1,18 L -1,18 Z" fill="#FF4D6D"/>
+      <rect x="-2" y="-34" width="5" height="6" rx="1" fill="#E4D6FF"/>
+    </g>
+  </g>
+
+  <!-- Wordmark -->
+  <g transform="translate(158, 62)">
+    <text x="0" y="0" font-size="62" font-weight="700" fill="#3D2B4F">inkbloom</text>
+    <text x="4" y="30" font-size="15" font-weight="500" fill="#FF4D6D" letter-spacing="6">CO.</text>
+  </g>
+
+</svg>

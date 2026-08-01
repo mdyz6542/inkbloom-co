@@ -1,0 +1,38 @@
+/* ============================================================
+   Inkbloom Co. — Design Tokens
+   "Where ideas bloom."
+   ============================================================ */
+
+:root {
+    /* Brand Colors */
+    --color-blush:          #FFD4DE;
+    --color-matcha:         #D4E9D0;
+    --color-lilac:          #E4D6FF;
+    --color-butter:         #FFF2C4;
+    --color-bg:             #FFFBF5;
+    --color-accent:         #FF4D6D;
+    --color-accent-shadow:  #C53251;
+    --color-heading:        #3D2B4F;
+    --color-body:           #3D2B4F;
+    --color-secondary:      #8B8094;
+    --color-border:         #F4F0F6;
+
+    /* Typography */
+    --font-heading: 'Fredoka', sans-serif;
+    --font-body:    'Poppins', sans-serif;
+    --font-accent:  'Caveat', cursive;
+
+    /* Border Radius */
+    --radius-sm:   0.5rem;
+    --radius-md:   1rem;
+    --radius-lg:   1.5rem;
+    --radius-xl:   2rem;
+
+    /* Shadows */
+    --shadow-soft: 0 4px 24px 0 rgba(61, 43, 79, 0.08);
+    --shadow-card: 0 2px 16px 0 rgba(61, 43, 79, 0.06);
+    --shadow-cherry: 0 4px 0 #C53251;
+
+    /* Spacing */
+    --section-py: 5rem;
+}

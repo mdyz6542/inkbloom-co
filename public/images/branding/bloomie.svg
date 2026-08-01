@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 260" width="200" height="260">
+  <g transform="translate(100, 130)">
+    <!-- Stem -->
+    <rect x="-5" y="60" width="10" height="50" rx="5" fill="#D4E9D0"/>
+    <ellipse cx="18" cy="90" rx="15" ry="7" fill="#D4E9D0" transform="rotate(30 18 90)"/>
+    <!-- Petals -->
+    <ellipse cx="0" cy="-48" rx="26" ry="36" fill="#FFD4DE"/>
+    <ellipse cx="-46" cy="-18" rx="26" ry="36" fill="#FFD4DE" transform="rotate(-60 -46 -18)"/>
+    <ellipse cx="46" cy="-18" rx="26" ry="36" fill="#FFD4DE" transform="rotate(60 46 -18)"/>
+    <ellipse cx="-34" cy="36" rx="26" ry="36" fill="#FFD4DE" transform="rotate(-130 -34 36)"/>
+    <ellipse cx="34" cy="36" rx="26" ry="36" fill="#FFD4DE" transform="rotate(130 34 36)"/>
+    <!-- Face -->
+    <circle cx="0" cy="0" r="38" fill="#FFF2C4"/>
+    <circle cx="-19" cy="7" r="6" fill="#FF4D6D" opacity="0.45"/>
+    <circle cx="19" cy="7" r="6" fill="#FF4D6D" opacity="0.45"/>
+    <path d="M -14,-7 Q -9,-14 -4,-7" stroke="#3D2B4F" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M 4,-7 Q 9,-14 14,-7" stroke="#3D2B4F" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M -6,7 Q 0,12 6,7" stroke="#3D2B4F" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  </g>
+</svg>
